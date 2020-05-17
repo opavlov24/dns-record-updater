@@ -1,4 +1,7 @@
-# dns-record-updater
+![Python application](https://github.com/opavlov24/dns-record-updater/workflows/Python%20application/badge.svg?branch=master)
+
+# dns-record-updater 
+
 Application for updating DNS record in auto mode. It's useful when a host has dynamic ip address and the dns records need to be updated every time when the ip is changed.
 
 The following env variables must be set before running the application:
