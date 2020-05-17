@@ -1,7 +1,11 @@
+import logging
+import os
+import schedule
+import time
+
 from app.App import DnsUpdater, UpdaterProperties
-from app.client.ip_client import IpifyIpClient
 from app.client.domain_registrator import GoDaddyDomainRegistratorClient
-import os, signal, schedule, time, logging
+from app.client.ip_client import IpifyIpClient
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
@@ -19,7 +23,7 @@ if __name__ == "__main__":
     app = DnsUpdater(
         ip_client=ip_client,
         domain_registrator_client=registrator_client,
-        properties = properties
+        properties=properties
     )
 
     interval_minutes: int = int(os.environ["DUPDATER_INTERVAL_IN_MINUTES"])
@@ -29,4 +33,3 @@ if __name__ == "__main__":
     while True:
         schedule.run_pending()
         time.sleep(1)
-

@@ -1,8 +1,10 @@
 import requests
 
+
 class IpClient:
     def get_current_ip(self):
         raise NotImplementedError
+
 
 class IpifyIpClient(IpClient):
     url = 'https://api.ipify.org?format=json'
